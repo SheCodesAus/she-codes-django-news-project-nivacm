@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: rgb(52, 193, 59);
 }
 
 header {
@@ -51,4 +51,95 @@ a {
 
 a, p {
     font-family: monospace;
+}
+
+/* Check here */
+form {
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+form label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    color: #358597;
+    letter-spacing: 1px;
+}
+
+form button {
+    font-family: 'Bebas Neue';
+    background-color: #f4a896;
+    border: solid #358597;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    font-size: 18px;
+    align-content: center;
+    letter-spacing: 3px;
+    color: #358597;
+}
+
+form input {
+    border: 1px solid #358597;
+}
+
+/* .fill-form {
+    margin-left: 40px;
+    margin-top: 70px;
+} */
+.fill-form form{
+    width: 30%;
+    text-align: left;
+}
+
+.button {
+    color: #f4a896;
+    background-color: #358597;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    border: solid;
+    align-content: center;
+    letter-spacing: 2px;
+}
+
+
+.fill-form label {
+    font-size: 18px;
+    color: #358597;
+    padding: 10px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    font-weight:600;
+}
+
+.fill-form input:hover,
+.fill-form textarea:hover {
+    border: 2px solid #f4a896;
+}
+
+
+.fill-form textarea {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+}
+
+.fill-form-button {
+    color: #f4a896;
+    background-color: #358597;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 15px 5px 15px;
+    border: solid;
+    align-content: center;
+    letter-spacing: 3px;
+    font-family: 'Bebas Neue', cursive;
+    margin: 5px;
+}
+
+.fill-form-button:hover {
+    border: 2px solid #358597;
+    background-color: #f4a896;
+    color: #358597;
 }

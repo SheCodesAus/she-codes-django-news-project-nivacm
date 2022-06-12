@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.story-title {
+    font-size: 27px;
+    padding: 10px;
+}
+p {
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 2rem;
+    padding:10px;
+}
+
 .story-card {
     margin: 2px;
-    border: 1px solid #000;
+    border: 1px solid rgb(7, 87, 50);
     padding: 5px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    background-color: white;
 }
 
 .story-card img {
@@ -9,6 +27,7 @@
     height: 300px;
     object-fit: cover;
 }
+
 
 #latest-stories {
     display: grid;
