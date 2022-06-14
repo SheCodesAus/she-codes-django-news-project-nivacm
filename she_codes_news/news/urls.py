@@ -11,4 +11,6 @@ urlpatterns = [
     path('<int:pk>/editStory', views.EditStoryView.as_view(), name='editStory'),
     path('category/<str:category>', views.CategoryView.as_view(), name='category'),
     path('<int:pk>/comments', views.AddCommentView.as_view(), name='newComment'),
+    
 ]
+#  pensar en el autor

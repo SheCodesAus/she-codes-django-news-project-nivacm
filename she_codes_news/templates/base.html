@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 
 <html lang="en">
@@ -6,24 +7,48 @@
         <meta charset="utf-8">
         <title>She Codes News</title>
         <meta name="description" content="">
-        <meta name="author" content="Hayley van Waas">
-        <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+        <meta name="author" content="Ivana Carrizo Molina">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-        {% block stylesheets %}{% endblock %}
-    
+        {% block stylesheets %} {% endblock %}
+        {% livereload_script %}
     </head>
 
     <body>
         <header>
             <div id="header-text">
-                <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>She {Codes} News</h1>
-                </a>
+                <a href="{% url 'news:index' %}" > <img id="logo" src="/static/images/logo.png" alt="Ivana Carrizo Molina"></a>
+                    {% include './nav.html' %}
             </div>
-            {% include './nav.html' %}
         </header>
 
-        {% block content %}{% endblock %}
+            <div class="hero-image">
+                <a href="{% url 'news:index' %}"> 
+                    <img src="/static/images/cupcake-1.png" alt="Ivana Carrizo Molina">
+                </a>
+                <div class="hero-text">
+                    <h1 class="hero-title">She{Codes} News</h1>
+                    <p id="hero-text">Tell us about your best adventures and experiences!</p>
+                    <a href="{% url 'news:newStory' %}">Write a story!</a>
+                </div>
+            </div>
         <!-- content blocks here -->
+
+        {% block content %} {% endblock %}
+        <footer class="footer">
+            <div id="footer-items">
+                <div class="footer-button" >
+                    <a id="footer_sign" href="{% url 'users:createAccount' %}">Sign up to be an author!</a>
+                </div>
+                <div class="footer-social">
+                    <a href= "https://github.com/nivacm" target="_blank"> 
+                        <img class="social_foot" src="/static/images/github.png" alt="Github"> 
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank"> 
+                        <img class="social_foot" src="/static/images/linkedin.png" alt="Linkedin"> 
+                    </a>
+                    <br>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

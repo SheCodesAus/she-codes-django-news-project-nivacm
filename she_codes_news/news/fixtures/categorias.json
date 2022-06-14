@@ -1,0 +1,6 @@
+[
+    {"model": "news.category", "pk": 1, "fields": {"name": "Coding"}},
+    {"model": "news.category", "pk": 2, "fields": {"name": "Sport"}},
+    {"model": "news.category", "pk": 3, "fields": {"name": "Life"}},
+    {"model": "news.category", "pk": 4, "fields": {"name": "Travel"}}
+]

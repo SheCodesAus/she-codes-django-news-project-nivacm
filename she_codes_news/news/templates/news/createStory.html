@@ -1,19 +1,12 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="fill-form">
     <h2>Write a new story!</h2>
     <form action="" method="Post">
         {% csrf_token %}
         {{form.as_p}}
-        <input class="fill-form-button" type="submit" value="submit">
+        <input type="submit" value="submit">
     </form>
-
-
 </div>
-<!-- <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="submit">
-</form> -->
-
 {% endblock %}

@@ -1,6 +1,7 @@
 from audioop import reverse
 from re import template
 from django.views import generic
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from .models import Category, NewsStory, Comment
 from .forms import StoryForm, CommentForm
@@ -23,7 +24,9 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.all()[:4]
-        context['all_stories'] = NewsStory.objects.all().order_by('pub_date')
+        context['all_stories'] = NewsStory.objects.all()[:20]
+        context['category']= Category.objects.all()
+        # context['all_stories'] = NewsStory.objects.all().order_by('pub_date')
         return context
 
 class StoryView(generic.DetailView):
@@ -31,7 +34,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-class AddStoryView(generic.CreateView):
+class AddStoryView(LoginRequiredMixin, generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyForm'
     template_name = 'news/createStory.html'
@@ -40,6 +43,7 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 class AddCommentView(LoginRequiredMixin,generic.CreateView):
     form_class = CommentForm
     context_object_name = 'commentForm'

@@ -8,7 +8,9 @@
         <div class="story-card-text">
             <h4 id="story-category">{{story.category}}</h4>
             <h3 id="story-title">{{ story.title }}</h3>
-            <a href="{% url 'users:profile' story.author.id %}"><h4 id="story-author">{{ story.author }}</h4></a>
+            <a href= "{% url 'users:profile' story.author.id %}">
+                <h4 id="story-author">{{ story.author }}</h4>
+            </a>
             <h5 id="story-date">{{ story.pub_date }}</h5>
             <div class="edit">
             {% if story.author == request.user %}
@@ -19,10 +21,5 @@
             {% endif %}
             </div>
         </div>
-        <!-- <div class="story-card-text">
-            <h3>{{ story.title }}</h3>
-            <h4>{{ story.author }}</h4>
-            <h4>{{ story.pub_date }}</h4>
-        </div> -->
     </a>
 </div>

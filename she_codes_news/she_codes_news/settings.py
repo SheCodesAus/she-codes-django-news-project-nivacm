@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os 
-from telnetlib import LOGOUT
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    '5*15pt5log&-bjango0117!b!x4do-mgmxvg8n$3016384zz(7'
-    )
+    '(jkv!qs0&8mc=ftuod-kzmdni25#vl+s!i@f!yk0*@tuvm16x+'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -45,13 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'livereload',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'django.forms',
 ]
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
-LOGIN_REDIRECT_URL = 'news:index'
-LOGOUT_REDIRECT_URL = 'news:index'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'she_codes_news.urls'
@@ -82,7 +83,7 @@ TEMPLATES = [
         },
     },
 ]
-
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 WSGI_APPLICATION = 'she_codes_news.wsgi.application'
 
 
@@ -135,15 +136,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    )
-LOGIN_URL = 'login'
+        )
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login'
+
 LOGIN_REDIRECT_URL = 'users:my_profile'
 
 LOGOUT_REDIRECT_URL = 'news:index'

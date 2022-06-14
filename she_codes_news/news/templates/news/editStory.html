@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content%} 
+
+<div class="fill-form">
+    <h2>Edit your story!</h2>
+    <form method="Post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+{% endblock %}

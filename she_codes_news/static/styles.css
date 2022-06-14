@@ -1,59 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
+
 
 body {
-    background-color: rgb(52, 193, 59);
+    background-color: #ffff;
+    margin:0;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    background-color: rgb(202, 237, 169);
+    margin-top: 30px;
+    padding-bottom: 30px;
 }
 
-img {
-    filter: grayscale(100%);
+#logo {
+    width: 50%;
+    padding: 10px;
 }
+
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 65px;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+    font-family: 'Oswald', cursive;
+    text-align: center;
+    font-size: 50px;
 }
 
 h3 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 35px;
 }
 
-#header-text {
-    flex-basis: 80%;
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color:#359744;
+    margin:0;
+}
+
+h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color:#358597;
+}
+
+.header-text {
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:100%;
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+#main-header {
+    width: 100%;
+    max-height: 400px;
 }
 
 nav {
-    flex-basis: 20%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a{
+    padding: 10px;
+    color: #358597
+}
+
+a:hover {
+    color: #359744;
 }
 
 a {
-    margin: 2px;
     text-decoration: none;
-    color: #000;
 }
 
 a, p {
-    font-family: monospace;
+    font-family: 'Oswald', sans-serif;
 }
 
-/* Check here */
+
 form {
     margin: 50px auto;
     width: 100%;
@@ -62,40 +97,37 @@ form {
 }
 
 form label {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', cursive;
     font-size: 20px;
-    color: #358597;
+    color: #359766;
     letter-spacing: 1px;
 }
 
 form button {
-    font-family: 'Bebas Neue';
-    background-color: #f4a896;
+    font-family: 'Oswald';
+    background-color: #359744;
     border: solid #358597;
     padding: 5px 15px 5px 15px;
     text-align: center;
     font-size: 18px;
     align-content: center;
     letter-spacing: 3px;
-    color: #358597;
+    color: #030d0f;
 }
 
 form input {
     border: 1px solid #358597;
 }
 
-/* .fill-form {
-    margin-left: 40px;
-    margin-top: 70px;
-} */
+
 .fill-form form{
     width: 30%;
     text-align: left;
 }
 
 .button {
-    color: #f4a896;
-    background-color: #358597;
+    color: #53e669;
+    background-color: #f2d1ed;
     text-align: center;
     font-size: 15px;
     padding: 15px;
@@ -107,16 +139,16 @@ form input {
 
 .fill-form label {
     font-size: 18px;
-    color: #358597;
+    color: #0b3f16;
     padding: 10px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', cursive;
     letter-spacing: 1px;
     font-weight:600;
 }
 
 .fill-form input:hover,
 .fill-form textarea:hover {
-    border: 2px solid #f4a896;
+    border: 2px solid #359744;
 }
 
 
@@ -126,8 +158,8 @@ form input {
 }
 
 .fill-form-button {
-    color: #f4a896;
-    background-color: #358597;
+    color: #359744;
+    background-color: #e58fde;
     text-align: center;
     font-size: 18px;
     padding: 5px 15px 5px 15px;
@@ -139,7 +171,97 @@ form input {
 }
 
 .fill-form-button:hover {
-    border: 2px solid #358597;
-    background-color: #f4a896;
-    color: #358597;
+    border: 2px solid #149109;
+    background-color: #e2b1ea;
+    color: #caf7bc;
+}
+
+
+footer{
+    background-color: #c2efb3;
+    display: flex;
+}
+
+#footer-items{
+    width: 100%;
+    text-align: center;
+}
+
+#footer_sign{
+    border: solid 2px;
+    padding: 5px;
+    color: #60c474;
+}
+
+.footer-button{
+    margin:20px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #bcf5c5;
+}
+.footer-social{
+margin-top: 40px;
+}
+
+.social_foot{
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-credit{
+    color: #359744;
+}
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.hero-image img {
+    width: 100%;
+}
+
+.hero-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(9, 6, 6);
+}
+
+#hero-text{
+    font-size: 20px;
+    font-family: 'Oswald', cursive;
+    letter-spacing: 1px;
+}
+
+.hero-text a {
+    border: solid 1px #359744;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: #daefc2;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}
+
+.hero-text a:hover {
+    background-color: #358597;
+    color: rgb(11, 3, 3);
 }
