@@ -7,6 +7,7 @@
 
 
 {% block content %}
+
 {% comment %} <div id="header-image"><img src="/static/images/cupcake-2.png" alt="Shecoders" style="width:100%;"></div> {% endcomment %}
 
 <div class="external-div">
@@ -27,15 +28,7 @@
 
 <div class="external-div" id="external-div2"> 
     <h2>All News</h2>
-    <div id="filter">
-        <h4>Search stories by category</h4>
-        <select onchange="javascript:location.href = this.value;">
-            {% for cat in category %}
-            <option value="{% url 'news:category' cat.name%}">{{cat.name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div id="all-stories">
+        <div id="all-stories">
         {% if all_stories %}
             {% for story in all_stories %}
             {% include "./storyCard.html" with story=story %}

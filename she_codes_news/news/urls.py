@@ -13,4 +13,4 @@ urlpatterns = [
     path('<int:pk>/comments', views.AddCommentView.as_view(), name='newComment'),
     
 ]
-#  pensar en el autor
+
