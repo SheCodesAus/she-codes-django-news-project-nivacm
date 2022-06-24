@@ -1,4 +1,4 @@
-<div class="story-card" id="story-card-{{ position }}">
+<div class="story-card" id="story-card-{{position}}">
     <a href="{% url 'news:story' story.id %}">
         {% if story.url != "" %}
             <img src="{{story.url}}">
@@ -8,9 +8,7 @@
         <div class="story-card-text">
             <h4 id="story-category">{{story.category}}</h4>
             <h3 id="story-title">{{ story.title }}</h3>
-            <a href= "{% url 'users:profile' story.author.id %}">
-                <h4 id="story-author">{{ story.author }}</h4>
-            </a>
+            <a href= "{% url 'users:profile' story.author.id %}"><h4 id="story-author">{{ story.author }}</h4></a>
             <h5 id="story-date">{{ story.pub_date }}</h5>
             <div class="edit">
             {% if story.author == request.user %}

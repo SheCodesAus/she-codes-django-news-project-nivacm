@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os 
+from telnetlib import LOGOUT
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -48,10 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'django.forms',
+    'django_filters',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
-
+LOGIN_REDIRECT_URL = 'users:my_profile'
+LOGOUT_REDIRECT_URL = 'news:index'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -70,16 +73,18 @@ ROOT_URLCONF = 'she_codes_news.urls'
 
 TEMPLATES = [
     {
-    'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [BASE_DIR / 'templates'],
-    'APP_DIRS': True,
-    'OPTIONS': {
-        'context_processors': [
-            'django.template.context_processors.debug',
-            'django.template.context_processors.request',
-            'django.contrib.auth.context_processors.auth',
-            'django.contrib.messages.context_processors.messages',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                
             ],
+                
         },
     },
 ]
@@ -146,6 +151,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'users:my_profile'
-
-LOGOUT_REDIRECT_URL = 'news:index'
