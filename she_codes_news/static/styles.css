@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Oswald', cursive;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
     font-size: 50px;
 }
@@ -71,9 +71,9 @@ nav {
     align-items: center;
 }
 
-nav a{
+nav a {
     padding: 10px;
-    color: #358597
+    color: #091518
 }
 
 a:hover {
@@ -141,7 +141,7 @@ form input {
     font-size: 18px;
     color: #0b3f16;
     padding: 10px;
-    font-family: 'Oswald', cursive;
+    font-family: 'Oswald', sans-serif;
     letter-spacing: 1px;
     font-weight:600;
 }
@@ -166,7 +166,7 @@ form input {
     border: solid;
     align-content: center;
     letter-spacing: 3px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
     margin: 5px;
 }
 
@@ -244,7 +244,7 @@ margin-top: 40px;
 
 #hero-text{
     font-size: 20px;
-    font-family: 'Oswald', cursive;
+    font-family: 'Oswald', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -257,7 +257,7 @@ margin-top: 40px;
     background-color: #ddd;
     text-align: center;
     cursor: pointer;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
 }
 

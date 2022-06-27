@@ -1,79 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
-.story-title {
-    font-size: 27px;
-    padding: 10px;
-}
-p {
-    font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 2rem;
-    padding:10px;
-}
-
 .story-card {
     margin: 2px;
-    border: 1px solid rgb(20, 175, 31);
+    border: 1px solid #000;
     padding: 5px;
-    box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    background-color: white;
 }
 
 .story-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    text-align: center;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px
-}
-#story-category{
-    color: #cccccc;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 8px;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    margin-top: 15px
-}
-#story-title{
-    color: #222222;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 1.25;
-    padding: 5px;
-    font-family: 'Playfair Display', serif;
 }
 
-#story-author{
-    color: #79f07d;
-    margin: 20px;
+/* #categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+} */
+
+#latest-stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "left-1 right-1" "left-2 right-2" "left-3 right-3";
 }
 
-#story-author:hover{
-    color: #c865f3;
-}
-.edit {
-    margin-bottom: 15px;
+
+#all-stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#delete_button, #edit_button {
-    color: #2c8414;
-    text-align: center;
-    font-size: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    letter-spacing: 1px;
+#all-stories .story-card {
+    flex-basis: 32%;
+    flex-grow: 1;
 }
 
-#delete_button{
-    border-right: solid 1px #4d0772;
+#story-content {
+    text-align: justify;
 }
 
-#delete_button:hover, #edit_button:hover {
-    color: #086b31;
+#story-content img {
+    float: right;
+    margin: 0 0 10px 10px;
+    width: 50%;
+}
+
+#title {
+    color: var(--dark-font);
 }
 
 .external-div{
@@ -86,92 +60,12 @@ p {
     padding-bottom: 100px;
 }
 
-#latest-stories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 100px;
-    margin-top: 50px;
-}
-
-#latest-stories .story-card {
-    width: 27%;
-    justify-content: space-between;
-}
-
-select {
-    font-size: 17px;
-    border: solid #d2f496;
-    padding: 10px;
-    font-family: 'Oswald';
-    letter-spacing: 0.1rem;
-    margin: 10px;
-}
-
-#filter{
-    text-align: center;
-}
-
-#all-stories {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:row;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 100px;
-    margin-top: 50px;
-
-}
-
-#all-stories .story-card {
-    width: 27%;
-    justify-content: space-between;
-}
-
-#story-content {
-    justify-content: space-around;
-    text-align: center;
-    max-width: 55%;
-    flex-direction: column;
-}
-
-#story_author {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 25px;
-    color: #1fa82f;
-    margin: 20px;
-}
-
-
-#author_bio {
-    text-align: center;
-    font-style: italic;
-    font-family: auto;
-}
-
-.new-story {
-    text-align: center;
-}
-
-.button {
-    color: #acf496;
-    background-color: #cfecf3;
-    text-align: center;
-    font-size: 20px;
-    padding: 15px;
-    border: solid;
-    font-family: 'Oswald', cursive;
-    letter-spacing: 2px;
-}
-
 .flex-div {
     display: flex;
     justify-content: space-around;
     margin: 40px 0 100px;
     
-}
+} 
 
 #story-wrapper {
     max-width: 30%;
@@ -179,6 +73,7 @@ select {
     flex-direction: column;
 
 }
+
 
 .story_image{
     max-width: 100%;
@@ -189,7 +84,6 @@ select {
     margin-bottom: 150px;
     margin-top: 50px;
 }
-
 #author-image {
     padding: 50px;
     border-radius: 50%;
@@ -198,35 +92,20 @@ select {
     
 }
 
-.connect {
-    color: #bcf496;
+#author_bio {
     text-align: center;
-    padding: 15px;
-    border: solid;
-    letter-spacing: 2px;
-    align-self: center;
-    max-width: 70%;
+    font-style: italic;
+    font-family: auto;
+}
+#story_author {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: #358597;
+    margin: 20px;
 }
 
-.comments{
-    display: flex;
-    flex-direction: column;
+
+.new-story {
+    text-align: center;
 }
-
-#add-comment {
-    color: #a6f496;
-    padding: 15px;
-    border: solid;
-    letter-spacing: 2px;
-    align-self: center;
-    max-width: 20%;
-}
-
-.comment {
-    border: solid 1px #a7f496;
-    text-align: left;
-    margin: 5px;
-    padding: 5px;
-
-}
-

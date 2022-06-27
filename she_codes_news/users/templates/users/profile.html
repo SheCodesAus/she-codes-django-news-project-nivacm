@@ -6,7 +6,6 @@
 {% endblock %}
 
 
-
 {% block content %}
 <div class="main-div">
     <div id="profile_header">
@@ -14,37 +13,38 @@
         {% if customuser.profile_picture != "" %}
             <img class="profile_picture" src="{{customuser.profile_picture}}">
         {% else %}
-            <img class="profile_picture" src="https://picsum.photos/400/400">
+            <img class="profile_picture" src="https://picsum.photos/600">
         {% endif %}
-        </div>
-        <div id="bio">
-            {% if customuser == request.user %}
-                <h3>Hello {{ customuser.username }}!</h3>
-            {% else %}
-            <h3>This is {{ customuser.username }}'s profile!</h3>
-            {% endif %}
-            <p>{{customuser.bio}}</p>
-        </div>
-        <a id="edit-account" href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
-        
-    <div id="my-stories-div">
+    </div>
+    <div id="bio">
         {% if customuser == request.user %}
-            <h2 class="title">My Stories</h2>
+            <h3>Hello {{ customuser.username }}!</h3>
         {% else %}
-            <h2 class="title">{{ customuser.username }}'s Stories</h2>
+            <h3>This is {{ customuser.username }}'s profile!</h3>
         {% endif %}
-            <div id="my-stories">
-                {% if customuser.newsstory_set.all %}
-                    {% for story in customuser.newsstory_set.all %}
-                        {% include "news/storyCard.html" with story=story position=forloop.counter %}
-                    {% endfor %}
-                {% else %}
-                    <p>No stories are available.</p>
-                {% endif %}
+        <p>{{customuser.bio}}</p>
+    </div>
+    <a id="edit-account" href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
+</div>   
+<div id="my-stories-div">
+    {% if customuser == request.user %}
+        <h2 class="title">My Stories</h2>
+    {% else %}
+        <h2 class="title">{{ customuser.username }}'s Stories</h2>
+    {% endif %}
+        <div id="my-stories">
+            {% if customuser.newsstory_set.all %}
+                {% for story in customuser.newsstory_set.all %}
+                    {% include "news/storyCard.html" with story=story position=forloop.counter %}
+                {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
         </div>
         <div id="new_story_button_profile">
         <a class="button" href="{% url 'news:newStory' %}">Write New Story</a>
         </div>
     </div>
 </div>
+
 {% endblock %}

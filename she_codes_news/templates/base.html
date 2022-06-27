@@ -8,9 +8,8 @@
         <title>She Codes News</title>
         <meta name="description" content="">
         <meta name="author" content="Ivana Carrizo Molina">
-        href="https://fonts.googleapis.com/css?family=Manjari&display=swap"rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-        {% block stylesheets %} {% endblock %}
+        {% block stylesheets %}{% endblock %}
     </head>
 
     <body>
@@ -21,7 +20,7 @@
             </div>
         </header>
 
-        </body>
+    
             <div class="hero-image">
                 <a href="{% url 'news:index' %}"> 
                     <img src="/static/images/cupcake-1.png" alt="Ivana Carrizo Molina">
@@ -32,9 +31,9 @@
                     <a href="{% url 'news:newStory' %}">Write a story!</a>
                 </div>
             </div>
-        <!-- content blocks here -->
-
-        {% block content %} {% endblock %}
+    {% block content %} {% endblock %}  <!-- content blocks here -->
+    </body>
+    
         <footer class="footer">
             <div id="footer-items">
                 <div class="footer-button" >

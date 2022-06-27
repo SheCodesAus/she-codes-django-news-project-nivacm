@@ -74,7 +74,7 @@ class DeleteStoryView(generic.DeleteView):
 
 class EditStoryView(generic.UpdateView):
     model = NewsStory
-    fields = ['title', 'pub_date', 'url', 'category', 'content']
+    fields = ['title', 'pub_date', 'content']
     template_name = "news/editStory.html"
     context_object_name = "story"
     success_url = reverse_lazy('news:index')

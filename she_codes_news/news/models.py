@@ -8,9 +8,9 @@ class NewsStory(models.Model):
         )
     pub_date = models.DateTimeField()
     url = models.URLField(max_length = 200, default="")
-    category = models.ForeignKey('news.Category', related_name='stories', on_delete=models.CASCADE, null=True, blank=True)
+    # category = models.ForeignKey('news.Category', related_name='stories', on_delete=models.CASCADE, null=True, blank=True)
     content = models.TextField()
-    story_img = models.CharField(max_length=500, default="https://i.picsum.photos/id/1060/5598/3732.jpg?hmac=31kU0jp5ejnPTdEt-8tAXU5sE-buU-y1W1qk_BsiUC8")
+    # story_img = models.CharField(max_length=500, default="https://i.picsum.photos/id/1060/5598/3732.jpg?hmac=31kU0jp5ejnPTdEt-8tAXU5sE-buU-y1W1qk_BsiUC8")
 
     class Meta:
         ordering = ['-pub_date']
@@ -34,4 +34,3 @@ class Comment(models.Model):
         return '%s - %s' % (self.newsstory.title, self.name)
 
 
-# pensar en el autor.

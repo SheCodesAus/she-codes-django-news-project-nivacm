@@ -2,14 +2,10 @@
 {% load static %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{ % static 'news/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
 {% endblock %}
-<!-- <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"> -->
 
 {% block content %}
-
-{% comment %} <div id="header-image"><img src="/static/images/cupcake-2.png" alt="Shecoders" style="width:100%;"></div> {% endcomment %}
-
 <div class="external-div">
     <h2>Latest News</h2>
     <div id="latest-stories">
