@@ -14,7 +14,7 @@
                 {% include "./storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
+            <p>There are no stories available.</p>
         {% endif %}
     </div>
 </div>    
@@ -27,12 +27,20 @@
         <div id="all-stories">
         {% if all_stories %}
             {% for story in all_stories %}
-            {% include "./storyCard.html" with story=story %}
+                {% include "./storyCard.html" with story=story %}
             {% endfor %}
         {% else %}
             <p>No stories are available.</p>
         {% endif %}
     </div>
+    <div id="all-stories">
+        {% if all_stories %}
+            {% for story in all_stories %}
+            {% include "./storyCard.html" with story=story %}
+            {% endfor%}
+        {% endif %}
+    </div>
+
 </div>
 
 {% endblock %}

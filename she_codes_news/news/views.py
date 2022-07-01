@@ -25,8 +25,8 @@ class IndexView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.all()[:4]
         context['all_stories'] = NewsStory.objects.all()[:20]
-        context['category']= Category.objects.all()
-        # context['all_stories'] = NewsStory.objects.all().order_by('pub_date')
+        # context['category']= Category.objects.all()
+        context['all_stories'] = NewsStory.objects.all().order_by('pub_date')
         return context
 
 class StoryView(generic.DetailView):
@@ -48,7 +48,7 @@ class AddCommentView(LoginRequiredMixin,generic.CreateView):
     form_class = CommentForm
     context_object_name = 'commentForm'
     template_name = 'news/add_comment.html'
-    # success_url = reverse_lazy('news:story', kwargs={self.kwargs["pk"]})
+    
 
 
     def form_valid(self, form):
@@ -74,7 +74,7 @@ class DeleteStoryView(generic.DeleteView):
 
 class EditStoryView(generic.UpdateView):
     model = NewsStory
-    fields = ['title', 'pub_date', 'content']
+    fields = ['title', 'pub_date', 'url', 'content']
     template_name = "news/editStory.html"
     context_object_name = "story"
     success_url = reverse_lazy('news:index')
@@ -86,11 +86,11 @@ class EditStoryView(generic.UpdateView):
         return obj
 
 
-class CategoryView(generic.ListView):
-    model = NewsStory
+# class CategoryView(generic.ListView):
+#     model = NewsStory
 
-    template_name = 'news/category.html'
-    context_object_name = 'stories'
+#     template_name = 'news/category.html'
+#     context_object_name = 'stories'
 
-    def get_queryset(self):
-        return NewsStory.objects.filter(category__name__contains=self.kwargs['category'])
+#     def get_queryset(self):
+#         return NewsStory.objects.filter(category__name__contains=self.kwargs['category'])

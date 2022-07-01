@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
 {% endblock %}
 
+
 {% block content %}
 <div class="flex-div">
     <div id="story-wrapper">
@@ -30,25 +31,7 @@
             <h4>{{story.pub_date}} </h4>
             <p>{{ story.content|linebreaks }}</p>
         </div>
-        <div class="comments">
-            <h2>Comments...</h2>
-            <div id="add-comment">
-                <a href="{% url 'news:newComment' story.id %}">
-                    <h4>Add comment</h4>
-                </a>
-            </div>
-            {% if not story.comments %}
-                <h3>No comments yet</h3>
-            {% else %}
-            <br></br>
-                {% for comment in story.comments.all %}
-                    <div class="comment">
-                    <h4> Comment by {{comment.name}} | {{comment.date_added}}</h4>
-                    <p>{{comment.body}}</p>
-                </div>
-                {% endfor %}
-            {% endif %}
-        </div>
+    
     </div>
 </div>
 {% endblock %}

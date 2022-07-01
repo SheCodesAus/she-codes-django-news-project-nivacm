@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
-from news.models import NewsStory
+# from news.models import NewsStory
 from django.core.exceptions import PermissionDenied
 
 class CreateAccountView(CreateView):
@@ -29,15 +29,5 @@ class UserPageView(generic.DetailView):
     model = CustomUser
     template_name = 'users/profile.html'
     
-
 def login_redirect(request):
     return redirect (reverse_lazy('users:profile', kwargs={'pk': request.user.id}))
-
-
-# context_object_name = 'my_stories'
-
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['my_stories'] = NewsStory.objects.filter(author=self.request.user.id)
-    #     return context

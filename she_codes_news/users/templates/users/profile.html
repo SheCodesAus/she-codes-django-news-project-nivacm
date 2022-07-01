@@ -10,28 +10,29 @@
 <div class="main-div">
     <div id="profile_header">
         <div class="profile_picture">
-        {% if customuser.profile_picture != "" %}
-            <img class="profile_picture" src="{{customuser.profile_picture}}">
-        {% else %}
-            <img class="profile_picture" src="https://picsum.photos/600">
-        {% endif %}
-    </div>
-    <div id="bio">
-        {% if customuser == request.user %}
+            {% if customuser.profile_picture %}
+                <img class="profile_picture" src="{{customuser.profile_picture}}">
+            {% else %}
+                <img class="profile_picture" src={{"https://picsum.photos/600"}}>
+            {% endif %}
+        </div>
+        <div id="bio">
+            {% if customuser == request.user %}
             <h3>Hello {{ customuser.username }}!</h3>
-        {% else %}
+            {% else %}
             <h3>This is {{ customuser.username }}'s profile!</h3>
-        {% endif %}
-        <p>{{customuser.bio}}</p>
-    </div>
-    <a id="edit-account" href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
-</div>   
-<div id="my-stories-div">
-    {% if customuser == request.user %}
+            {% endif %}
+            
+            <p>{{customuser.bio}}</p>
+        </div>
+        <a id="edit-account" href="{% url 'users:editAccount' customuser.id %}">Edit your account</a>
+    </div>   
+    <div id="my-stories-div">
+        {% if customuser == request.user %}
         <h2 class="title">My Stories</h2>
-    {% else %}
+        {% else %}
         <h2 class="title">{{ customuser.username }}'s Stories</h2>
-    {% endif %}
+        {% endif %}
         <div id="my-stories">
             {% if customuser.newsstory_set.all %}
                 {% for story in customuser.newsstory_set.all %}
