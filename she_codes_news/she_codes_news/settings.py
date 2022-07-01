@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'django.forms',
-    'django_filters',
+    # 'django_filters',
 
 ]
 
