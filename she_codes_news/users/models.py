@@ -3,7 +3,7 @@ from django.contrib.auth.models  import AbstractUser
 
 
 class CustomUser(AbstractUser):
-    profile_picture = models.URLField(("profile picture"), blank = True, null = True)
+    profile_picture = models.URLField(null=True, blank=True)
     bio = models.TextField(max_length=500, blank = True, null = True)
 
 
