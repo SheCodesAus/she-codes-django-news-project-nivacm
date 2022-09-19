@@ -22,6 +22,7 @@ header {
 
 
 h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     font-size: 65px;
     margin: 0;
@@ -56,35 +57,36 @@ h5 {
     flex-direction: row;
     width:100%;
     margin-right: 30px;
-    font-size: 20px;
+    font-size: 40px;
 }
 
-#main-header {
-    width: 100%;
-    max-height: 400px;
-}
 
 nav {
+    flex-basis: 100%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction:column;
     align-items: center;
 }
 
 nav a {
     padding: 10px;
     color: #091518
+    
 }
 
-a:hover {
+/* a:hover {
     color: #359744;
-}
+} */
 
 a {
     text-decoration: none;
+    margin: 4px;
+    font-size: 18px;
 }
 
 a, p {
     font-family: 'Oswald', sans-serif;
+   
 }
 
 
@@ -126,7 +128,7 @@ form input {
 
 .button {
     color: #53e669;
-    background-color: #f2d1ed;
+    background-color: #c36acb;
     text-align: center;
     font-size: 15px;
     padding: 15px;
@@ -158,7 +160,7 @@ form input {
 
 .fill-form-button {
     color: #359744;
-    background-color: #e58fde;
+    background-color: #c36acb;
     text-align: center;
     font-size: 18px;
     padding: 5px 15px 5px 15px;
@@ -214,7 +216,7 @@ margin-top: 40px;
 
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(225, 237, 152, 0.5), rgba(217, 228, 141, 0.5));
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,21 +230,26 @@ margin-top: 40px;
 }
 
 .hero-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-family: 'Playfair Display', serif;
-    font-size: 90px;
+    font-size: 60px;
 }
 
 .hero-text {
+    display: inline-flex;
     text-align: center;
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(9, 6, 6);
+    top: 60%;
+    left: 0%;
+    color: rgb(9, 6, 6); 
 }
 
 #hero-text{
-    font-size: 20px;
+    flex-basis:80%;
+    display: flex;
+    font-size: 40px;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 1px;
 }
@@ -257,7 +264,7 @@ margin-top: 40px;
     text-align: center;
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
-    font-size: 18px;
+    font-size: 25 px;
 }
 
 .hero-text a:hover {

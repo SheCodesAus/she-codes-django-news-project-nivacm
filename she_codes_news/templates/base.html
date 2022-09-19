@@ -22,12 +22,14 @@
 
         <div class="hero-image">
             <a href="{% url 'news:index' %}"> 
-                <img src="/static/images/cupcake-1.png" alt="Ivana Carrizo Molina">
+                <img src="/static/images/code.png" alt="Ivana Carrizo Molina">
             </a>
             <div class="hero-text">
-                <h1 class="hero-title">She{Codes} News</h1>
-                <p id="hero-text">Tell us about your experiences!</p>
-                <a href="{% url 'news:newStory' %}">Write a story!</a>
+                <h1 class="hero-title">
+                    (She{Codes} + Maths)^Arts News
+                </h1>
+                <p id="hero-text">Tell us about your experiences in codes, maths and a!</p>
+                <a href="{% url 'news:newStory' %}"><h3> Write a story!</h3></a>
             </div>
         </div>
     {% block content %} {% endblock %}  <!-- content blocks here -->
