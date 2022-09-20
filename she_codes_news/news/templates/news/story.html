@@ -1,8 +1,37 @@
-<div id="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="flex-div">
+    <div id="story-wrapper">
+        <img class="story_image" src="{{story.url}}"> 
+        <img id="author-image" src="{{story.author.profile_picture}}">
+        <h3 id="story_author"> Written by {{ story.author }}</h3>
+        <p id="author_bio">{{story.author.bio}}</p>
+        {% if story.author != request.user %}
+            <div class="connect">
+                <a href="{% url 'users:profile' story.author.id %}">
+                    <h4> Connect with the {{ story.author }}</h4>
+                </a>
+            </div>
+        {% else %}
+        <div class="connect">
+            <a id="edit_button" href="{% url 'news:editStory' story.id %}">Edit your story</a>
+        </div>
+        {% endif%}
+    </div>
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
-        {{ story.content|linebreaks }}
+        <div>
+            <h2>{{ story.title }}</h2>
+            <h4>{{story.pub_date}} </h4>
+            <p>{{ story.content|linebreaks }}</p>
+        </div>
+    
     </div>
 </div>
+{% endblock %}
